@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         mShowText.findViewById(R.id.textView);
         mConnectText.findViewById(R.id.textView2);
         mSendEdit.findViewById(R.id.editText);
-        mIdText.findViewById(R.id.textView3)
+        mIdText.findViewById(R.id.textView3);
 
         // Create the Google API Client with access to Games
         // Create the client used to sign in.
@@ -380,17 +380,17 @@ public class MainActivity extends AppCompatActivity {
             status = apiException.getStatusCode();
         }
 
-        if (!checkStatusCode(status)) {
-            return;
-        }
+        //if (!checkStatusCode(status)) {
+       //     return;
+       // }
 
-        String message = getString(R.string.status_exception_error, details, status, exception);
+        //String message = getString(R.string.status_exception_error, details, status, exception);
 
-        new AlertDialog.Builder(this)
-                .setMessage(message)
-                .setNeutralButton(android.R.string.ok, null)
-                .show();
-    }
+       // new AlertDialog.Builder(this)
+         //       .setMessage(message)
+         //       .setNeutralButton(android.R.string.ok, null)
+          //      .show();
+    }//
 
     private void logBadActivityResult(int requestCode, int resultCode, String message) {
         Log.i(TAG, "Bad activity result(" + resultCode + ") for request (" + requestCode + "): "
@@ -413,7 +413,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (ApiException apiException) {
                 String message = apiException.getMessage();
                 if (message == null || message.isEmpty()) {
-                    message = getString(R.string.signin_other_error);
+                    message = "Sign  innnn";
                 }
 
                 onDisconnected();
@@ -588,7 +588,7 @@ public class MainActivity extends AppCompatActivity {
         switch (turnStatus) {
             case TurnBasedMatch.MATCH_TURN_STATUS_MY_TURN:
                 mTurnData = SkeletonTurn.unpersist(mMatch.getData());
-                setGameplayUI();
+                //setGameplayUI();
                 return;
             case TurnBasedMatch.MATCH_TURN_STATUS_THEIR_TURN:
                 // Should return results.
@@ -601,7 +601,7 @@ public class MainActivity extends AppCompatActivity {
 
         mTurnData = null;
 
-        setViewVisibility();
+        //setViewVisibility();
     }
 
     private void onCancelMatch(String matchId) {
